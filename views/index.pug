@@ -1,0 +1,20 @@
+extends layout
+
+block content
+
+  div(class="container")
+    a(href="/new" class="btn btn-success float-right m-2") New message
+    h1=title
+    div(class="row")
+      each message in messages
+        div(class="col-md-3 col-sm-6")
+            -var a=['primary','dark','secondary']
+            -var cls=a[Math.floor(3*Math.random())]
+            div(class=`card text-white bg-${cls} mb-3`)
+              div(class="card-header") #{message.user}
+              div(class="card-body")
+                h5(class="card-title") #{message.text}
+              div(class="card-footer")
+                small(class="text-white") #{message.added}
+
+

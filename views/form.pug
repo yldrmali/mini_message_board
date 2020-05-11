@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    
+    div(class="container")
+        h1 Create a new message
+        form(method="POST" action="/new")
+            div.form-group
+                label(for="author_name") Author Name
+                input(type="text" class="form-control" id="author_name" name="authorname")
+            div.form-group
+                label(for="message") Message
+                input(type="text" class="form-control" id="message" name="messagecontent")
+            button(type="submit" class="btn btn-success btn-lg btn-block active") Submit
